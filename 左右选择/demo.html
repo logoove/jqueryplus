@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网友小李分享Jquery实现角色左右选择特效</title>
+<meta name="Keywords" content="网友小李分享Jquery实现角色左右选择特效,Jquery插件,Jquery原创,Jquery资源,Jquery特效,div+css,JquerySchool" />
+<meta name="description" content="JquerySchool是一个专门分享jquery资源、jquery插件、jquery特效的一个网站,完全开放源代码,把实际开发中应用最多、最实用的Jquery资源抽取出来再加以精心编排,让广大网友能以最短的时间、花最少的精力去真正掌握jQuery开发的知识。" />
+<script src="../jquery.min.js" type="text/javascript"></script>
+<style type="text/css">
+#one{width:200px; height:180px; float:left}
+#two{width:50px; height:180px; float:left}
+#three{width:200px; height:180px; float:left}
+.btn{width:50px; height:30px; margin-top:10px; cursor:pointer;}
+</style>
+<script type="text/javascript">
+//下拉框交换JQuery
+$(function(){
+    //移到右边
+    $('#add').click(function() {
+    //获取选中的选项，删除并追加给对方
+        $('#select1 option:selected').appendTo('#select2');
+    });
+    //移到左边
+    $('#remove').click(function() {
+        $('#select2 option:selected').appendTo('#select1');
+    });
+    //全部移到右边
+    $('#add_all').click(function() {
+        //获取全部的选项,删除并追加给对方
+        $('#select1 option').appendTo('#select2');
+    });
+    //全部移到左边
+    $('#remove_all').click(function() {
+        $('#select2 option').appendTo('#select1');
+    });
+    //双击选项
+    $('#select1').dblclick(function(){ //绑定双击事件
+        //获取全部的选项,删除并追加给对方
+        $("option:selected",this).appendTo('#select2'); //追加给对方
+    });
+    //双击选项
+    $('#select2').dblclick(function(){
+       $("option:selected",this).appendTo('#select1');
+    });
+});
+
+</script>
+</head>
+<body>
+<br />
+<br />
+<center>
+  <h3>网友小李分享Jquery实现角色左右选择特效<br />
+    JquerySchool网站出品（<a href="http://www.jq-school.com" target="_blank">http://www.jq-school.com</a>）</h3>
+</center>
+<table width="500" align="center" border="0" cellpadding="0" cellspacing="0" class="newContTab">
+  <tr>
+    <th>&nbsp;</th>
+    <td><div>
+        <div>
+          <select multiple="multiple" id="select1" style="width:150px;height:200px; float:left; border:4px #A0A0A4 outset; padding:4px; ">
+            <option value="超级管理员">超级管理员</option>
+            <option value="普通管理员">普通管理员</option>
+            <option value="信息发布员">信息发布员</option>
+            <option value="财务管理员">财务管理员</option>
+            <option value="产品管理员">产品管理员</option>
+            <option value="资源管理员">资源管理员</option>
+            <option value="管理员">管理员</option>
+          </select>
+        </div>
+        <div style="float:left"> <span id="add">
+          <input type="button" class="btn" value=">"/>
+          </span><br />
+          <span id="add_all">
+          <input type="button" class="btn" value=">>"/>
+          </span> <br />
+          <span id="remove">
+          <input type="button" class="btn" value="<"/>
+          </span><br />
+          <span id="remove_all">
+          <input type="button" class="btn" value="<<"/>
+          </span> </div>
+        <div>
+          <select multiple="multiple" id="select2" style="width: 150px;height:200px; float:lfet;border:4px #A0A0A4 outset; padding:4px;">
+          </select>
+        </div>
+      </div></td>
+  </tr>
+</table>
+</body>
+</html>

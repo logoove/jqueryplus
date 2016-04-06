@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网友水墨寒分享原文本框插入表情Jquery插件</title>
+<meta name="Keywords" content="网友水墨寒分享原文本框插入表情Jquery插件,Jquery插件,Jquery原创,Jquery资源,Jquery特效,div+css,JquerySchool" />
+<meta name="description" content="JquerySchool是一个专门分享jquery资源、jquery插件、jquery特效的一个网站,完全开放源代码,把实际开发中应用最多、最实用的Jquery资源抽取出来再加以精心编排,让广大网友能以最短的时间、花最少的精力去真正掌握jQuery开发的知识。" />
+<link href="smohan.face.css" type="text/css" rel="stylesheet">
+<script src="../jquery.min.js" type="text/javascript"></script> 
+<script type="text/javascript" src="smohan.face.js" charset="utf-8"></script>
+</head>
+
+<body>
+<h3>文本框表情插件</h3>
+<h4>Author：水墨寒 Smohan.net</h4>
+<!--DEMO-->
+<!--表情盒子-->
+<div id="Smohan_FaceBox">
+   <textarea name="text" id="Smohan_text" class="smohan_text"></textarea>
+   <p>
+   <a href="javascript:void(0)" class="face" title="表情"></a>
+   <button class="button" id="Smohan_Showface">显示表情</button>
+   </p>
+</div>
+<!--/表情盒子-->
+<!--解析表情-->
+<div id="Zones"></div>
+<!--/DEMO-->
+<script type="text/javascript">
+$(function (){
+	$("a.face").smohanfacebox({
+		Event : "click",	//触发事件	
+		divid : "Smohan_FaceBox", //外层DIV ID
+		textid : "Smohan_text" //文本框 ID
+	});
+	//解析表情  $('#Zones').replaceface($('#Zones').html());
+});
+//Demo测试
+$('#Smohan_Showface').click(function() {
+	 $('#Zones').fadeIn(360);
+	 $('#Zones').html($('#Smohan_text').val());
+	 $('#Zones').replaceface($('#Zones').html());//替换表情
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.js"></script>
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>表单</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+ <div class="div-textarea">
+            	<div class="div-textarea-div">
+            		<textarea placeholder="请输入您的宝贵意见" id="div-textarea"  ></textarea>
+            		<div id="div-textarea-num" class="div-textarea-num">剩余399字</div>
+                </div>
+            </div>
+<script>
+$(function(){
+	$("#div-textarea").on("input paste" , function(){
+				var num_left=400-$(this).val().length;
+				if(num_left<0){
+					$("#div-textarea-num").text("超过"+(-num_left)+"字");
+					$("#div-textarea-num").css("color","#E44443");
+				}else{
+					$("#div-textarea-num").text("剩余"+(num_left)+"字");
+					$("#div-textarea-num").css("color","#999999");
+				}
+			});
+
+})
+</script> 
+
+<div class="ui-textarea">
+                <span class="ui-textarea-box">
+                    <textarea placeholder="评论将由公众帐号筛选后显示，对所有人可见。" class="ui-textarea-t"></textarea>
+                </span>
+            </div> 
+ 
+
+            <div class="ui-form ui-border-t">
+                <form action="#" >
+                    <div class="ui-form-item ui-form-item-order ui-border-b">
+                     
+                       <input  type="file" name='file' accept="image/*" capture="camera">
+                        
+                    </div>
+                     
+                       <div class="ui-form-item ui-form-item-order ui-border-b tcenter">
+                       
+                        <div  class="ui-btn bg-green f-white middle hand rel" onclick="document.getElementById('f').click();"><i class="icon icon-14"></i><span class='f18'>上传图片</span><input  class='opacity0 abs f30' style='right:0;top:0' type="file" name='file' accept="image/*" id='f' ></div>
+                        
+                    </div>
+                    
+                       <div class="ui-form-item ui-form-item-order ui-border-b tcenter">
+                        <a  class="ui-btn bg-green f-white middle "><i class="icon icon-plus"></i><span class='f20'>添加图片</span></a>
+                    </div>
+                   
+                </form>
+            </div>
+
+ 
+ </section>
+    </body>
+</html>

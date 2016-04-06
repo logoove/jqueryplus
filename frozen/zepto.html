@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="css/frozen.css">
+        <link rel="stylesheet" href="demo.css">
+        <script src="./js/zepto.js"></script>
+        <script src="./js/frozen.min.js"></script>
+         <script src="./js/fn.js"></script>
+        <script src="./js/LocalList.js"></script>
+        <script type="text/javascript" src="js/iscroll.min.js"></script>
+        <link rel="stylesheet" href="css/datePicker.css">
+        <script src="./js/datePicker.min.js"></script>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>zepto </h1><button class="ui-btn">回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+<select  name="q" id="q" style="width:50px;margin: 10px 30px;color:red" multiple="">
+	<option value="1">中国</option>
+	<option value="2">日本</option>
+	<option value="3">美国</option>
+	<option value="4">韩国</option>
+	<option value="5">英国</option>
+</select>
+
+<input type="text" id="date5" readonly="" placeholder="年-月-日-时间-回调">
+
+<div id="c"></div>
+
+ 
+        </section><!-- /.ui-container-->
+        <script>
+ $(function(){
+$("#q").change(function(){
+	     var q = $(this).val();
+ 
+ alert(q);
+ var ss=[];
+ var c  = $("#q option:selected").each(function(){ss.push($(this).html())});
+alert(ss)
+ })
+ 
+
+});
+
+         $(function() {
+        $('#date5').datePicker({
+            beginyear: 2005,
+            theme: 'datetime',
+            callBack: function() {
+                alert("--!当前值:" + $('#date5').val());
+            }
+        });
+        $('#date6').datePicker({
+            beginyear: 2005,
+            theme: 'date',
+        });
+        $('#date7').datePicker({
+            theme: 'time',
+        });
+        $('#date8').datePicker({
+            theme: 'month',
+        });
+    });
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+      var options = {
+	country: 'province',		// “省”下拉列表的名称
+	state: 'city',				// “市”下拉列表的名称
+	city: 'area',				// “区”下拉列表的名称
+	current: '33|01|03',		// 当前默认值，用管道符“|”分割
+	language: 'zh_cn',			// 数据文件的语言
+	path_to_xml: 'js/data/china/',	// 数据文件的目录
+	read_only: false			// 数据是否只读，若设置为true，则无需设置 country 和 state
+};
+
+LocalList.mf_init(options);
+     
+     
+     
+        $('.ui-header .ui-btn').click(function(){
+            location.href= 'index.html';
+        });
+        </script>
+    </body>
+</html>

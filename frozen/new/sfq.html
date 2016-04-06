@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.min.js"></script>
+
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>手风琴</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+ <!--手风琴-->
+<div class="ui-item">
+            <div class="item-title">
+                <h3>李商隐-嫦娥</h3>
+                <i class="icon-sv mod-arrow arrow-down"></i>
+            </div>
+            <div style="display: none;" class="cont-area">
+                
+                    <p>云母屏风烛影深，长河渐落晓星沉</p>
+                    <p>嫦娥应悔偷灵药，碧海青天夜夜心</p>
+                    <p>李商隐，字义山，号玉溪生、樊南生，唐代著名诗人.</p>
+                             
+            </div>
+        </div>  
+        <i class='ui-icon-like inline hand' id='like' data-like='0' onclick="onlike(1,$(this).data('like'))"></i>    
+ <script>
+function onlike(id,v){
+ 	$.get('http://192.168.1.140/9.php',{v:v,id:id},function(data){
+    if(data==1){
+    $('#like').removeClass('ui-icon-like inline hand').addClass("ui-icon-liked inline hand");
+    $('#like').data('like',1);
+    }else{
+     $('#like').removeClass('ui-icon-liked inline hand').addClass("ui-icon-like inline hand");
+      $('#like').data('like',0);
+    }
+});
+}
+
+ $(".ui-item .item-title").on("click", function () {
+            var css = $(this).find("i").attr("class");
+            if (css.indexOf("arrow-down") == -1) {
+                $(this).next().hide();
+                $(this).find("i").attr("class", "mod-arrow arrow-down icon-sv");
+            }
+            else {
+                $(this).next().show();
+                $(this).find("i").attr("class", "mod-arrow arrow-up icon-sv");                
+            }                     
+        });
+ </script>     
+ </section>
+    </body>
+</html>

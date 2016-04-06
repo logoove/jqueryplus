@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.min.js"></script>
+<style>
+	button{margin: 10px;}
+</style>
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>多种动画</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+    <div class="demo-item">
+        <p class="demo-desc">动画样例</p>
+        <div class="demo-block">
+            <section class="ui-panel ui-panel-card ui-panel-simple ui-border-t">
+               
+                <ul class="ui-list ui-list-pure ui-border-tb">
+                    <li class="ui-border-t">
+                        <p></p>
+                        <h4>
+
+                        
+                        </h4>
+                    </li>
+                    <li class="ui-border-t">
+                        <p>动画</p>
+                        <h4>
+<div id="ani">
+<button data-ani="ani-lg" class="ui-btn bg-green f-white">逐渐放大ani-lg</button>
+<button data-ani="ani-sm" class="ui-btn bg-green f-white">逐渐缩小sm</button>
+<button data-ani="ani-fade" class="ui-btn bg-green f-white">淡入fade</button>
+<button data-ani="ani-top" class="ui-btn bg-green f-white">顶部滑入top</button>
+<button data-ani="ani-right" class="ui-btn bg-green f-white">右边滑入right</button>
+<button data-ani="ani-bottom" class="ui-btn bg-green f-white">底部滑入bottom</button>
+<button data-ani="ani-left" class="ui-btn bg-green f-white">左边滑入left</button>
+<button data-ani="ani-shake" class="ui-btn bg-green f-white">左右摇动shake</button>
+<button data-ani="ani-circle" class="ui-btn bg-green f-white ani-circle">旋转circle</button>
+<button data-ani="ani-circle" class="ui-btn bg-green f-white ani-rev ani-circle">反向rev</button>
+<button data-ani="fadeIn" class="ui-btn bg-green f-white">淡入用于显示fadeIn</button>
+<button data-ani="fadeOut" class="ui-btn bg-green f-white">淡出 用于隐藏fadeOut</button>
+</div>
+<script>
+$(function(){
+	$('#ani .ui-btn').tap(function(){
+		var ani = $(this).data('ani');
+		$(this).animate(ani);
+	})	
+})
+</script>
+
+                        
+                        </h4>
+                    </li>
+                    <li class="ui-border-t">
+                        <p>单选</p>
+                        <h4>
+                         <label><input class="switch switch-ani" type="checkbox"> 默认未选中switch switch-ani</label>
+    <label><input class="switch switch-ani" type="checkbox" checked> 默认选中</label>
+                        
+                        </h4>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+
+ 
+        </section><!-- /.ui-container-->
+        <script>
+      
+         $('#index').click(function(){
+            location.href= $(this).data('href');
+        });
+        
+        $('.ui-header .ui-btn').click(function(){
+            location.href= '../index.html';
+        });
+        </script>
+    </body>
+</html>

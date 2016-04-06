@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>元宵节猜灯谜</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="keywords" content="华润，华润集团，万象城">
+    <meta name="description" content="">
+    <link href="images/css.css" rel="stylesheet" type="text/css" />
+
+    <script src="images/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+
+    <script src="images/jQuery.mobileTouch.js" type="text/javascript"></script>
+
+</head>
+<body>
+<script>
+        var gSound ="js/1.mp3";
+    </script>
+    <script src="images/sound.js"></script>
+    
+    <div class="bodyer_index">
+        <div class="flower_blocks">
+            <div class="flowerA">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerB">
+                <img src="images/dp8_k1.png"></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+        </div>
+        <div class="flower_blocks">
+            <div class="flowerA1">
+                <img src="images/dp8_k1.png" /></div>
+            <div class="flowerB1">
+                <img src="images/dp8_k8.png" /></div>
+            <div class="flowerC1">
+                <img src="images/dp8_k2.png" /></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+        </div>
+        <div class="flower_blocks">
+            <div class="flowerA2">
+                <img src="images/dp8_k2.png" /></div>
+            <div class="flowerB2">
+                <img src="images/dp8_k8.png" /></div>
+            <div class="flowerC2">
+                <img src="images/dp8_k6.png" /></div>
+            <div class="flowerD2">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerE2">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerF2">
+                <img src="images/dp8_k1.png" /></div>
+            <div class="flowerG2">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerH2">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerI2">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerJ2">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerK2">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerL2">
+                <img src="images/dp8_k2.png" /></div>
+            <div class="flowerM2">
+                <img src="images/dp8_k8.png" /></div>
+            <div class="flowerN2">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+        </div>
+        <div class="flower_blocks">
+            <div class="flowerA3">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerB3">
+                <img src="images/dp8_k1.png" /></div>
+            <div class="flowerC3">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerD3">
+                <img src="images/dp8_k2.png" /></div>
+            <div class="flowerE3">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerF3">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerG3">
+                <img src="images/dp8_k6.png" /></div>
+            <div class="flowerH3">
+                <img src="images/dp8_k8.png" /></div>
+            <div class="flowerI3">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+        </div>
+        <div class="flower_blocks">
+            <div class="flowerA4">
+                <img src="images/dp8_k6.png" /></div>
+            <div class="flowerB4">
+                <img src="images/dp8_k1.png" /></div>
+            <div class="flowerC4">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerD4">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerE4">
+                <img src="images/dp8_k8.png" /></div>
+            <div class="flowerF4">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerG4">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerH4">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI4">
+                <img src="images/dp8_k6.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+            <div class="flowerH">
+                <img src="images/dp8_k7.png"></div>
+            <div class="flowerI">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerJ">
+                <img src="images/dp8_k9.png"></div>
+            <div class="flowerK">
+                <img src="images/dp8_k10.png"></div>
+            <div class="flowerD1">
+                <img src="images/dp8_k4.png" /></div>
+            <div class="flowerE1">
+                <img src="images/dp8_k9.png" /></div>
+            <div class="flowerF1">
+                <img src="images/dp8_k0.png" /></div>
+            <div class="flowerG1">
+                <img src="images/dp8_k7.png" /></div>
+            <div class="flowerH1">
+                <img src="images/dp8_k3.png" /></div>
+            <div class="flowerI1">
+                <img src="images/dp8_k10.png" /></div>
+            <div class="flowerC">
+                <img src="images/dp8_k2.png"></div>
+            <div class="flowerD">
+                <img src="images/dp8_k3.png"></div>
+            <div class="flowerE">
+                <img src="images/dp8_k4.png"></div>
+            <div class="flowerF">
+                <img src="images/dp8_k8.png"></div>
+            <div class="flowerG">
+                <img src="images/dp8_k6.png"></div>
+        </div>
+        <div class="index_parentBlock">
+            <div class="index_page index_pageA">
+                <div class="index_leftImg">
+                    <img src="images/dp1_k1.png" /></div>
+                <div class="index_centerImg">
+                    <img src="images/dp1_k2.png" /></div>
+                <div class="index_rightImg">
+                    <img src="images/dp1_k3.png" /></div>
+                <div class="index_titleImg">
+                    <div class="index_titleImgBlock index_titleImgBlockA">
+                        <img src="images/dp1_k4.png" /></div>
+                    <div class="index_titleImgBlock index_titleImgBlockB">
+                        <img src="images/dp1_k5.png" /></div>
+                </div>
+                <div class="index_content">
+                    <a href="javascript:InitTopic();" class="index_aBlock">
+                        <img src="images/dp1_k6.png" /></a>
+                    <div class="index_textBlcok">
+                        <p>
+                            元宵圆圆，月儿圆，许个心愿圆又圆。</p>
+                        <p>
+                            新春的节日气氛还未结束，</p>
+                        <p>
+                            万象城为您送上新春第一波趣味互动体验</p>
+                    </div>
+                    <div class="index_text">
+                        游戏规则</div>
+                    <div class="index_bottomImg">
+                        <img src="images/dp1_k7.png" /></div>
+                </div>
+            </div>
+            <div class="index_page index_pageB">
+                <div class="explain_imgA">
+                    <img src="images/dp2_k1.png" /></div>
+                <div class="explain_imgB">
+                    <img src="images/dp2_k2.png" /></div>
+                <div class="explain_top">
+                    <img src="images/dp2_k5.png" /></div>
+                <div class="explain_content">
+                    <div class="explain_titleImg">
+                        <img src="images/dp2_k6.png" /></div>
+                    <div class="explain_textBlock">
+                        <!--<div class="explain_titleText">
+                            活动规则：</div>-->
+                        <p>
+                            本灯谜一共有5道题，全部答对即可参加抽奖及获得可乐一罐；未全部答对即可获得参与奖可口可乐一罐。
+                        </p>
+                        <div class="explain_titleText">
+                            奖品设置:</div>
+                        <p>
+                            一等奖：舒心花茶</p>
+                        <p>
+                            二等奖：情人暖心相册</p>
+                        <p>
+                            参与奖：可口可乐</p>
+                        <div class="explain_titleText">
+                            兑奖地点：</div>
+                        <p>
+                            万象城负一层地铁通道必胜客门口</p>
+                            <br />
+                        <p>
+                            活动日期：3月4日-3月7日
+                        </p>
+                        <p>
+                            兑奖时间：3月4日-3月8日
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="images/mian.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            var wHeight = $(window).height();
+            $(".bodyer_index,.index_page").css({ "height": wHeight });
+
+            var nextPage = function() {
+                $(".index_parentBlock").stop().animate({ marginTop: -wHeight });
+                $(".explain_imgA").addClass("explain_imgKA");
+                $(".explain_imgB").addClass("explain_imgKB");
+            }
+            var prevPage = function() {
+                $(".index_parentBlock").stop().animate({ marginTop: 0 });
+            }
+
+
+            $(".index_pageA").mobileTouch({
+                isPageScroll: false,
+                methods: [
+					["up", 1]
+				],
+                upCallBack: function() {
+                    nextPage();
+                }
+            });
+            $(".index_pageB").mobileTouch({
+                isPageScroll: false,
+                methods: [
+					["down", 1]
+				],
+                downCallBack: function() {
+                    prevPage();
+                }
+            });
+            $(".index_bottomImg").bind('click', function() {
+                nextPage();
+            })
+            $(".explain_top").bind('click', function() {
+                prevPage();
+            })
+var urlajax = location.href.split('#')[0];
+$.getJSON("http://weixin.yoby123.cn/app/index.php?c=entry&do=index&m=yoby_bao&i=1&callback=?",{"url":urlajax} ,function(data) {
+
+wx.config({
+	debug: false,
+	appId: data.appId,
+	timestamp: data.timestamp,
+	nonceStr: data.nonceStr,
+	signature: data.signature,
+	jsApiList: [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	]
+});
+
+wx.ready(function () {
+//要分享的数据
+  var shareData = {
+    title:"分享标题",
+    desc: "分享描述",
+    link:"http://www.baidu.com/" ,
+    imgUrl:"http://www.baidu.com/img/baidu_jgylogo3.gif",
+    type:'',
+    dataUrl:'',
+  };
+
+//分享给朋友
+wx.onMenuShareAppMessage({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      type: shareData.type,
+    dataUrl: shareData.dataUrl,
+      trigger: function (res) {//菜单
+        
+      },
+      success: function (res) {//成功
+        
+      },
+      cancel: function (res) {//取消
+        
+      },
+      fail: function (res) {//失败
+        alert(JSON.stringify(res));
+      },
+      complete:function(res){//完成
+      
+      },
+    });	
+
+//分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: shareData.title+shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+        
+      },
+      success: function (res) {
+},
+      cancel: function (res) {
+       
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      },
+      complete:function(res){//完成
+      	 //alert('完成');
+      },
+    });	
+
+//分享到QQ
+    wx.onMenuShareQQ({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+      
+      },
+      complete: function (res) {
+      
+      },
+      success: function (res) {
+        
+      },
+      cancel: function (res) {
+        
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });	
+    
+//分享到腾讯微博
+    wx.onMenuShareWeibo({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+       
+      },
+      complete: function (res) {
+        
+      },
+      success: function (res) {
+       
+      },
+      cancel: function (res) {
+      
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+
+});        
+     
+     
+ });
+
+   
+                
+    });    
+    </script>
+</body>
+</html>

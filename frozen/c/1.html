@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>静态页面分享不是梦</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<script src="zepto.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+静态html页面能够分享吗?答案是能够的.
+
+怎么做呢?当然要借助伟大的微擎,写一个专门签名的ajax方法,只要是有分享权限的域名都能签名成功,这样就能够随便放置html啦
+本页面地址<a href="http://weixin.yoby123.cn/c/1.html">http://weixin.yoby123.cn/c/1.html</a>真的是静态页面哦!!!
+
+静态获取用户信息
+<div id="qq"></div>
+
+<a style="padding:5px;background:#ccc;font-size:14px;color:black;margin:30px;display:block" href="http://weixin.yoby123.cn/c/index.html">http://weixin.yoby123.cn/c/index.html,漂亮的元宵节</a>
+<script>
+ $(function() {
+ $.get("http://weixin.yoby123.cn/app/index.php?c=entry&do=user&m=yoby_bao&i=1&callback=?" ,function(data) {
+ 
+ $("#qq").html("昵称:"+data.nickname+"  openid:"+data.openid+"  城市:"+data.city+"  性别: "+data.sex);
+ 
+ },'json');
+var urlajax = location.href.split('#')[0];
+$.get("http://weixin.yoby123.cn/app/index.php?c=entry&do=index&m=yoby_bao&i=1&callback=?",{"url":urlajax} ,function(data) {
+
+wx.config({
+	debug: false,
+	appId: data.appId,
+	timestamp: data.timestamp,
+	nonceStr: data.nonceStr,
+	signature: data.signature,
+	jsApiList: [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	]
+});
+
+wx.ready(function () {
+//要分享的数据
+  var shareData = {
+    title:"静态页面标题",
+    desc: "html静态页面也能签名,那就是ajax",
+    link:"http://weixin.yoby123.cn/c/1.html" ,
+    imgUrl:"http://www.baidu.com/img/baidu_jgylogo3.gif",
+    type:'',
+    dataUrl:'',
+  };
+
+//分享给朋友
+wx.onMenuShareAppMessage({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      type: shareData.type,
+    dataUrl: shareData.dataUrl,
+      trigger: function (res) {//菜单
+        
+      },
+      success: function (res) {//成功
+        
+      },
+      cancel: function (res) {//取消
+        
+      },
+      fail: function (res) {//失败
+        alert(JSON.stringify(res));
+      },
+      complete:function(res){//完成
+      
+      },
+    });	
+
+//分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: shareData.title+shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+        
+      },
+      success: function (res) {
+},
+      cancel: function (res) {
+       
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      },
+      complete:function(res){//完成
+      	 //alert('完成');
+      },
+    });	
+
+//分享到QQ
+    wx.onMenuShareQQ({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+      
+      },
+      complete: function (res) {
+      
+      },
+      success: function (res) {
+        
+      },
+      cancel: function (res) {
+        
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });	
+    
+//分享到腾讯微博
+    wx.onMenuShareWeibo({
+      title: shareData.title,
+      desc: shareData.desc,
+      link: shareData.link,
+      imgUrl:shareData.imgUrl,
+      trigger: function (res) {
+       
+      },
+      complete: function (res) {
+        
+      },
+      success: function (res) {
+       
+      },
+      cancel: function (res) {
+      
+      },
+      fail: function (res) {
+        alert(JSON.stringify(res));
+      }
+    });
+
+});        
+     
+
+   
+                
+    },'json'); 
+    
+ });      
+    </script>
+</body>
+</html>

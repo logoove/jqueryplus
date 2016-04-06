@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片放大缩小向左向右网页特效</title>
+<meta name="keywords" content="Jquery,Jquery资源,前端设计,div+css" />
+<meta name="description" content="Jquery,Jquery资源,前端设计,div+css" />
+<link href="http://www.jq-school.com/css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="artZoom.js"></script>
+<script type="text/javascript">jQuery('a.artZoom').artZoom();</script>
+<style type="text/css">
+/*演示*/
+body { font-size:75%; font-family:'微软雅黑'; }
+img { border:0 none; }
+p, ul { padding:0; margin:0; }
+ul, ol, li { list-style:none; }
+#about { width:550px; padding-bottom:20px; margin-top:100px; border-bottom:1px solid #CCC; }
+#about .planeart, #about .planeart a { color:#CCC; }
+ul.imgList { width:550px; }
+ul.imgList li { margin-top:10px; }
+</style>
+</head>
+<body>
+<center>
+<div id="top">
+  <h2 class="subtitle"> JQuery让你的前端设计更精彩！</h2>
+  <div id="meun"><a href="/" title="Jquery-School"><img src="http://www.jq-school.com/logo.png" /></a>
+    <ul id="submeun">
+      <li><a href="/">首 页</a></li>    
+	   <li class="cur"><a href="javascript:void(0)">图片放大缩小向左向右插件</a></li>
+    </ul>
+  </div>
+</div>
+  <div id="about">
+    <h1>图片放大缩小向左向右网页特效</h1>
+  </div>
+  <ul class="imgList">
+    <li> <a class="miniImg artZoom" href="images/b.jpg" rel="images/b.jpg"><img src="images/m.jpg" /></a> </li>
+    <li> <a class="miniImg artZoom" href="images/b2.jpg" rel="images/b2.jpg"><img src="images/m2.jpg" /></a> </li>
+  </ul>
+  <br />
+  <p></p>
+  <p>支持浏览器：IE6~IE8,Chrome,Firefox,Opera,Safari，支持IE8旋转后高度自适应。</p>
+  <p></p>
+</center>
+</body>
+</html>

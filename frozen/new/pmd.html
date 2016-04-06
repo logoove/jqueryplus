@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.js"></script>
+
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>跑马灯</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+        
+ <!--水平滚动-->
+ <div  id="scroll-div" style="height:30px;margin:0 auto;white-space: nowrap;overflow:hidden;border-top:1px solid #ddd;border-bottom:1px solid #ddd;vertical-align: middle;margin: 5px 0;padding: 10px 0;">
+				<div id="scroll-begin" class="inline f16">
+				白日依山尽,黄河入海流,欲穷千里目,更上一层楼
+				</div>
+				<div id="scroll-end" class="inline f16"></div>
+			</div>
+<script>
+	function ScrollImgLeft(){
+	var speed=50; 
+	var scroll_begin = document.getElementById("scroll-begin"); 
+	var scroll_end = document.getElementById("scroll-end"); 
+	var scroll_div = document.getElementById("scroll-div"); 
+	scroll_end.innerHTML=scroll_begin.innerHTML; 
+	function Marquee(){ 
+		if(scroll_end.offsetWidth-scroll_div.scrollLeft<=0) 
+		scroll_div.scrollLeft-=scroll_begin.offsetWidth; 
+		else 
+		scroll_div.scrollLeft++; 
+	} 
+	var MyMar=setInterval(Marquee,speed); 
+	scroll_div.onmouseover=function() {clearInterval(MyMar);} 
+	scroll_div.onmouseout=function() {MyMar=setInterval(Marquee,speed);} 
+} 
+ScrollImgLeft();
+</script>       
+ </section>
+    </body>
+</html>

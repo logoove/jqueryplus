@@ -1,0 +1,29 @@
+
+<script type="text/javascript" src='../jquery.min.js'></script>
+<script type="text/javascript" src='./jqzoom.min.js'></script>
+<link href='./jqzoom.css' rel='stylesheet'>
+<body>
+ <div class="zoom-section">   
+        <h3>Standard Settings With Gallery</h3>     	  
+           <div class="zoom-small-image"><a href="images/bigimage00.jpg" class="cloud-zoom" id="zoom1" rel="adjustX: 10, adjustY:-4"><img src="images/smallimage.jpg" alt='' title="Optional title display"></a></div>
+           <div class="zoom-desc">
+           <p><a href='images/bigimage00.jpg' class='cloud-zoom-gallery' title='Red' rel="useZoom: 'zoom1', smallImage: 'images/smallimage.jpg' "><img class="zoom-tiny-image" src="images/tinyimage.jpg" alt = "Thumbnail 1"></a>
+           <a href='images/bigimage01.jpg' class='cloud-zoom-gallery' title='Blue' rel="useZoom: 'zoom1', smallImage: ' images/smallimage-1.jpg'"><img class="zoom-tiny-image" src="images/tinyimage-1.jpg" alt = "Thumbnail 2"></a>                  
+           <a href='images/bigimage02.jpg' class='cloud-zoom-gallery' title='Blue' rel="useZoom: 'zoom1', smallImage: 'images/smallimage-2.jpg' "><img class="zoom-tiny-image" src="images/tinyimage-2.jpg" alt = "Thumbnail 3"></a></p>
+           <p>Hover over the large image to see the zoom working.</p>
+           <p>These are the 'out of the box' settings, with the big image appearing to the right of the small image.</p>
+           <p>The appearance of the smaller image, lens and zoom window can be altered with regular CSS.</p>
+           </div>
+	     </div>
+         
+         <div class="zoom-section">
+         <h3>Tints</h3>
+            <div class="zoom-small-image"><a href="images/bigimage03.jpg" class="cloud-zoom" rel="tint: '#FF0000',tintOpacity:0.5 ,smoothMove:5,zoomWidth:480, adjustY:-4, adjustX:10">
+            <img src="images/smallimage-3.jpg" title="Optional title display" alt=""></a></div>
+            <div class="zoom-desc">
+            <p>Add a tint of any colour (including black or white) to the small image. The intensity of tint is fully customisable, shown here in red at 50%.</p>
+            <p>In this example, the movement smoothness is set to a higher value for a gentle drifting effect.</p>
+            </div>
+         </div>
+
+</body>

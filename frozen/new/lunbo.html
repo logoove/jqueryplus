@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.js"></script>
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>轮播swipe</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+ <div class="ui-slider" >
+            <ul class="ui-slider-content" style="width: 300%">
+                <li><span style="background-image:url(images/7.jpg)"></span></li>
+                <li><span style="background-image:url(images/8.jpg)"></span></li>      
+                <li><span style="background-image:url(images/9.jpg)"></span></li>
+                
+            </ul>
+          
+        </div>
+        <script class="demo-script">
+        (function (){
+            var slider = new fz.Scroll('.ui-slider', {
+                role: 'slider',
+                indicator: true,
+                autoplay: true,
+                interval: 3000
+            });
+
+            slider.on('beforeScrollStart', function(fromIndex, toIndex) {
+                console.log(fromIndex,toIndex)
+            });
+
+            slider.on('scrollEnd', function(cruPage) {
+                console.log(cruPage)
+            });
+        })();
+        </script>
+        
+ <script src="../js/swipe.js"></script>
+   <h1>轮播组件2</h1>
+<div class="slider" id="slider1">
+<ul>
+<li><img src="images/1.jpg"/>
+<div class="slider-desc">虎落平阳不如狗</div></li>
+<li><img src="images/2.jpg">
+	<div class="slider-desc">英雄终归有落幕</div>
+</li>
+<li><img src="images/3.jpg">
+<div class="slider-desc">同是天涯沦落人</div>
+</li>
+<li><img src="images/4.jpg">
+	<div class="slider-desc">你我相遇是上天安排吗</div>
+</li>
+</ul>
+</div>
+<ol class="slider-nav"><li><a class="active">1</a></li><li><a class="">2</a></li><li><a class="">3</a></li><li><a class="">4</a></li></ol>
+
+<h1>轮播组件3</h1>
+
+<div  class="slider slider-a1" id="slider2">
+<ul >
+<li ><img src="images/1.jpg" ></li>
+<li class=""><img src="images/2.jpg"></li>
+<li class=""><img src="images/3.jpg" ></li>
+<li  ><img src="images/4.jpg" ></li>
+</ul>
+</div>
+<ol class="a1-nav">
+<li><a class="active"></a></li><li><a class=""></a></li><li><a class=""></a></li><li><a ></a></li></ol>
+<script>
+$(function(){
+var elem = document.getElementById('slider1');
+window.mySwipe= Swipe(elem, {
+		speed:500,
+		auto:1000,
+		startSlide:0,		
+		callback: function(index,element){
+	$('.slider-nav li a').removeClass("active");
+	$('.slider-nav li a').eq(index).addClass("active");
+		},transitionEnd: function(index, element) {
+		 	
+		 }
+	});
+mySwipe.stop = function(){
+    delay = options.auto > 0 ? options.auto : 0;
+    clearTimeout(interval);
+};
+
+var elem2 = document.getElementById('slider2');
+window.mySwipe2= Swipe(elem2, {
+		speed:1000,
+		auto:1000,
+		startSlide:0,		
+		callback: function(index,element){
+	$('.a1-nav li a').removeClass("active");
+	$('.a1-nav li a').eq(index).addClass("active");
+		},transitionEnd: function(index, element) {
+		 	
+		 }
+	});
+});	
+</script>
+
+<ul class="ui-grid-halve">
+  <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/1.jpg)"></span>
+                    </div></li>
+  <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/2.jpg)"></span>
+                    </div></li>
+   <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/3.jpg)"></span>
+                    </div></li>                   
+   <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/4.jpg)"></span>
+                    </div></li>                   
+     <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/5.jpg)"></span>
+                    </div></li>                 
+      <li> <div class="ui-grid-halve-img">
+                        <span style="background-image:url(images/6.jpg)"></span>
+                    </div></li>                
+                    
+</ul>
+
+  
+  <img src="../css/default.png" class="img-border" style='margin-left:5px;'>
+<img src="../css/default.png" class="img-circle ani-circle">
+<img src="../css/default.png" class="img-border img-radius" style='margin-left:5px;'>
+
+<img src="images/1.jpg" class="img-radius img-resp">
+<img src="images/1.jpg" class='blur img-resp'/>
+
+<div class='new'>
+<img   data-src="images/3.jpg" class='img-resp blur' src='data:image/gif;base64,R0lGODlhAQABAIAAAOfn5/v7+yH5BAAHAP8ALAAAAAABAAEAAAICRAEAOw=='/>
+<img   data-src="images/2.jpg" class='img-resp' src='data:image/gif;base64,R0lGODlhAQABAIAAAOfn5/v7+yH5BAAHAP8ALAAAAAABAAEAAAICRAEAOw=='/>
+</div>
+<script src="../js/lazyload.js"></script><script>
+
+lazyload.load('.new img');
+</script>
+ </section>
+    </body>
+</html>

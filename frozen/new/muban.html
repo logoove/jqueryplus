@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+        
+        <script src="../js/frozen.min.js"></script>
+
+<script src="../js/fn.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>js模板</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+        
+        <section class="ui-container">
+  <div id="q"></div>
+<script>
+var data={
+    name:"李太白",
+    word:"你还好吗",
+    friend:[
+        "杜甫",
+        "白居易"
+    ]
+}
+var tplHTML='<div><%=name%> 说<%=word%>。</div>'+
+            '<div>他的朋友:<ul>'+
+            '<% for(var i=0;i<friend.length;i++){ %>'+
+            '<li><%=friend[i]%></li>'+
+            '<% } %></ul></div>';
+var dest=$.tpl(tplHTML,data);
+$("#q").html(dest);
+</script>  
+</section><!-- /.ui-container-->
+        <script>
+      
+         $('#index').click(function(){
+            location.href= $(this).data('href');
+        });
+        
+        $('.ui-header .ui-btn').click(function(){
+            location.href= '../index.html';
+        });
+        </script>
+        
+        
+        
+<div id="content"></div>
+
+<div id="sjc"></div>
+
+<script id="test" type="text/html">
+<% if (isAdmin) {   %>
+
+<h1><%=title%></h1>
+<ul>
+    <% for (var i = 0; i < list.length; i ++) {   %>
+        <li>索引 <%= i + 1 %> ：<%=list[i] %></li>
+    <% } %>
+</ul>
+
+<% } %>
+</script>
+
+<script>
+var data1 = {
+	title: '基本例子',
+	isAdmin: true,
+	list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+};
+var tpl = document.getElementById('test').innerHTML;
+var desc1=$.tpl(tpl,data1);
+ document.getElementById('content').innerHTML = desc1;
+
+ document.getElementById('sjc').innerHTML =timeline(1418497573000);
+</script>
+<div style='margin-bottom:50px'>
+</div>
+    </body>
+</html>

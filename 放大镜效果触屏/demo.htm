@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EnlargeTouch.js 演示 - ABELCODE</title>
+        <meta name="keywords" content="Enlarge touch, EnlargeTouch.js, Enlarge for Touch, JavaScript 插件, 图片放大, 放大镜, 局部放大, 手机, 触摸屏, 移动"/>
+        <meta name="description" content="Enlager touch 是 Enlarge 插件面向触摸屏使用的版本，它原生基于 JavaScript 实现，无需依赖第三方类库，可方便部署于移动版的网站或客户端，节省流量，同时为网站提升用户体验。"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <script src="http://libs.baidu.com/jquery/2.0.2/jquery.min.js"></script>
+        <style type="text/css">
+		* {
+			border: 0;
+			margin: 0;
+			padding: 0;
+			list-style: outside none;
+			outline: none;
+			resize: none;
+		}
+		
+		
+		body {
+			background: #F9F9F9;
+			font: 16px/1.0 sans-serif;
+			-webkit-font-smoothing: antialiased;
+			text-align: center;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		.wrap {
+			margin: 20px auto 0px;
+			width: 250px;
+		}
+		
+		h1 {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+		
+		#demo {
+			display: block;
+		}
+		
+		#demo img {
+			display: block;
+			width: 250px;
+			height: 295px;
+		}
+		
+		.copyright a {
+			font-size: 12px;
+			line-height: 3em;
+			color: #999;
+		}
+		.enlarge-demo {
+	height: 185px;
+}
+		
+		.enlarge-demo a {
+	float: left;
+	margin-right: 20px;
+}
+
+.enlarge-demo a img {
+	display: block;
+	width: 240px;
+	height: 180px;
+}
+        </style>
+        <script src="./jquery.enlarge.min.js"></script>
+        <!--script src="./enlarge.touch.min.js"></script-->
+
+    </head>
+    <body>
+    	<div class="wrap">
+        	<h1>EnlargeTouch.js</h1>
+        </div>
+    	<div class="wrap">
+        	<a id="demo" href="./demo.jpg" target="_blank">
+            	<img src="./demo!250.jpg" alt="demo">
+            </a>
+        </div>
+        <div class="enlarge-demo">
+        	<a href="./demo.jpg" id="demo1">
+                            	<img src="./demo!250.jpg">
+                            </a>
+             </div>               
+              <script>
+			//enlarge("demo", 1000, 1180);
+
+		$(function(){
+	$("#demo1").enlarge(
+{
+    // 鼠标遮罩层样式
+    shadecolor: "#FFD24D",
+    shadeborder: "#FF8000",
+    shadeopacity: 0.5,
+    cursor: "move",
+
+    // 大图外层样式
+    layerwidth: 400,
+    layerheight: 300,
+    layerborder: "#DDD",
+    fade: true,
+
+    // 大图尺寸
+    largewidth: 1280,
+    largeheight: 960
+});
+		})
+        </script>
+    </body>
+</html>

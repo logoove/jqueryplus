@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>FrozenUI Demo</title>
+        <link rel="stylesheet" href="../css/frozen.css">
+        <link rel="stylesheet" href="../demo.css">
+         <link rel="stylesheet" href="../css/yoby.css">
+        <script src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.min.js"></script>
+
+<script src="../js/datePicker.js"></script>
+    </head>
+       <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>年月日 时分控件</h1><button class="ui-btn" data-href="../index.html" id='index'>回首页</button>
+        </header>
+        
+        <footer class="ui-footer ui-footer-btn">
+            <ul class="ui-tiled ui-border-tb" style='font-size:14px'>
+                <li data-href="../index.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe60c;</i><div>基础样式</div></li>
+                <li data-href="../ui.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div style='margin:0;padding:0'>UI组件</div></li>
+                <li data-href="../js.html" class="ui-border-r"><i class="ui-icon" style="  font-size:32px;line-height: 16px;">&#xe62d;</i><div>JS插件</div></li>
+                 <li data-href="../new.html" class="ui-border-r"><i class="ui-icon" style="  font-size:20px;line-height: 16px;">&#xe61e;</i><div>最新控件</div></li>
+                  <li data-href="../jsfn.html" class="ui-border-r"><i class="ui-icon" style="  font-size:16px;line-height: 16px;">&#xe634;</i><div>JS函数</div></li>
+            </ul>
+        </footer>
+         <style>
+    .input-group {
+        padding: 10px;
+    }
+    
+    .input-group input {
+        margin: 10px;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: auto;
+    }
+    </style>  
+        <section class="ui-container">
+    <script type="text/javascript">
+    $(function() {
+        $('#date5').datePicker({
+            beginyear: 2005,
+            theme: 'datetime',
+            callBack: function() {
+                alert("--!当前值:" + $('#date5').val());
+            }
+        });
+        $('#date6').datePicker({
+            beginyear: 2005,
+            theme: 'date',
+        });
+        $('#date7').datePicker({
+            theme: 'time',
+        });
+        $('#date8').datePicker({
+            theme: 'month',
+        });
+    });
+    </script>
+          <div class="input-group">
+            <input type="text" id="date5" readonly="" placeholder="年-月-日-时间-回调">
+        </div>
+        <div class="input-group">
+            <input type="text" id="date6" readonly="" placeholder="年-月-日">
+        </div>
+        <div class="input-group">
+            <input type="text" id="date7" readonly="" placeholder="时间">
+        </div>
+        <div class="input-group">
+            <input type="text" id="date8" readonly="" placeholder="月份">
+        </div>
+ </section>
+    </body>
+</html>
