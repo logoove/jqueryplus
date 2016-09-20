@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>iframe Test</title>
+</head>
+<body>
+<div>
+	数据传递测试：<br /><input id="text1" value="Hello MDialog" /><br />
+	<button id="btn1">刷新本框架页</button><br />
+	<button id="btn2">在顶层页打开新对话框</button><br />
+
+	<button id="btn3">点击我关闭弹窗</button><br />
+	<button id="btn4">设置本对话框的高度</button><br />
+
+	<button id="btn5">设置本对话框的宽度</button><br />
+	<button id="btn6">改变当前对画框的标题</button><br />
+	<button id="btn7">给当前对画框增加按钮</button>
+	
+	
+	<script type="text/javascript">
+
+		//这里获取当前对话框
+		var d = top.$M.getIframe(window.name);
+
+		var $$ = function( id ){
+			return typeof id == 'string' && document.getElementById(id);
+		};
+
+		$$('btn1').onclick = function(){
+			top.window.location.reload();
+		};
+
+		$$('btn2').onclick = function(){
+			var newDialog = top.$M({
+				title: 'Hello World',
+				content: '我是从 iframe 弹出的新弹窗',
+				lock: true,
+				time: 5
+			});
+		};
+
+		$$('btn3').onclick = function(){ d.close(); };
+		$$('btn4').onclick = function(){ d.height(400); };
+		$$('btn5').onclick = function(){ d.width(400); };
+		$$('btn6').onclick = function(){ d.title('我是iframe新标题'); };
+		$$('btn7').onclick = function(){ 
+			d.button([{
+				name: '同意',
+		        callback: function () {
+		            this.title('你同意了，2秒后自动关闭').time(2);
+		            return false;
+		        },
+       			focus: true
+			},{
+				name: '关闭我'
+			}]);
+		};
+	</script>
+</div>
+</body>
+</html>

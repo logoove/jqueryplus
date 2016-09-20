@@ -1,0 +1,251 @@
+/**
+ * M.MDialog 2.2.0
+ * Date: 2014-07-10
+ * Update: 2014-11-30
+ * (c) 2014-2014 M.J, http://webjyh.com
+ *
+ * This is licensed under the GNU LGPL, version 2.1 or later.
+ * For details, see: http://creativecommons.org/licenses/LGPL/2.1/
+ *
+ */
+/* MDialog ui-wrap */
+.ui-MDialog-wrap {
+	width: auto;
+	display: none;
+	background: #cbcbcb;
+	background: rgba( 0, 0, 0, 0.3 );
+	font-family: Helvetica, arial, sans-serif;
+	font-size: 14px;
+	color: #555;
+	border-radius: 3px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	-webkit-animation:transform-scale .4s;
+	        animation:transform-scale .4s;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+}
+.ui-MDialog-wrap.ui-MDialog-focus {
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2 );
+}
+
+.ui-MDialog-wrap .MDialog-wrapper {
+	margin: 5px;
+}
+
+/* MDialog ui-table */
+.ui-MDialog-wrap .ui-MDialog-table { 
+	background-color: #FFF;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+.ui-MDialog-wrap .ui-MDialog-table thead,
+.ui-MDialog-wrap .ui-MDialog-table tbody,
+.ui-MDialog-wrap .ui-MDialog-table tfoot,
+.ui-MDialog-wrap .ui-MDialog-table th,
+.ui-MDialog-wrap .ui-MDialog-table tr,
+.ui-MDialog-wrap .ui-MDialog-table td { 
+	background-color: #FFF;
+	padding: 0px;
+	margin: 0px;
+}
+/* MDialog ui-header */
+.ui-MDialog-wrap .ui-MDialog-header {
+	position: relative;
+	border-bottom: 1px solid #DDD;
+	_height: 100%;
+}
+
+/* MDialog ui-title */
+.ui-MDialog-wrap .ui-MDialog-title {
+	font-weight: bold;
+	padding: 10px 35px 10px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: move;
+	text-overflow: ellipsis;
+}
+/* MDialog ui-close */
+.ui-MDialog-wrap a:link.ui-MDialog-close,
+.ui-MDialog-wrap a:visited.ui-MDialog-close {
+	position: absolute;
+	display: block;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	right: 10px;
+	top: 50%;
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: -9px;
+	text-decoration: none;
+	color: #AAA9A9;
+	outline: none;
+	border-radius: 2px;
+	overflow: hidden;
+	color: #FFF;
+	background: #BBB;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	        transition: all 0.3s;
+}
+
+.ui-MDialog-wrap a:hover.ui-MDialog-close,
+.ui-MDialog-wrap a:active.ui-MDialog-close {
+	background-color: red;
+	color: #FFF;
+	-webkit-transform: rotate(360deg);
+	   -moz-transform: rotate(360deg);
+	        transform: rotate(360deg); 
+}
+
+
+.ui-MDialog-wrap .ui-MDialog-header .untitle {
+	width: 23px !important;
+	height: 23px !important;
+	top: 0px !important;
+	right: 0px !important;
+	border-radius: 50% !important;
+	line-height: 22px !important;
+	box-shadow: 0px 0px 5px rgba( 0, 0, 0, 0.4 );
+	margin: -12px -12px 0px 0px !important;
+}
+
+/* MDialog ui-content */
+.ui-MDialog-wrap .ui-MDialog-content {
+	min-width: 160px;
+	min-height: 22px;
+}
+
+.ui-MDialog-wrap .ui-MDialog-loading .loading-text {
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	display: block;
+	text-align: center;
+	font-size: 16px;
+}
+
+.ui-MDialog-wrap .ui-MDialog-msg {
+	min-width: 0;
+	min-height: 0;
+	line-height: 1;
+}
+
+/* MDialog ui-footer */
+.ui-MDialog-wrap .ui-MDialog-footer {
+	padding: 0px 15px 15px;
+}
+
+/* MDialog ui-MDialog-statusbar */
+.ui-MDialog-wrap .ui-MDialog-statusbar {
+	float: left;
+	padding: 3px 0px;
+	color: #888;
+	font-size:13px;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+/* MDialog ui-bottom */
+.ui-MDialog-wrap .ui-MDialog-bottom {
+	float: right;
+	white-space: nowrap;
+}
+
+.ui-MDialog-wrap .ui-MDialog-bottom button {
+	width: auto;
+	display: inline-block;
+	margin:0px 2px;
+	padding: 4px 15px;
+	text-align: center;
+	white-space: nowrap;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #CCC;
+	color: #333;
+	margin-bottom: 0px;
+	background-color: #FFF;
+	outline:none;
+	border-radius: 2px;
+	*zoom: 1;
+	*padding: 0px 8px;
+}
+
+.ui-MDialog-wrap .ui-MDialog-bottom button:hover {
+	color: #333333;
+	background-color: #ebebeb;
+	border-color: #adadad;
+}
+
+.ui-MDialog-wrap .ui-MDialog-bottom button:active {
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); 
+}
+
+.ui-MDialog-wrap .ui-MDialog-bottom button.ui-MDialog-autofocus {
+	color: #FFF;
+	background-color: #3276B1;
+	border-color: #357EBD;
+}
+
+.ui-MDialog-wrap .ui-MDialog-bottom button.ui-MDialog-disabled {
+	background-color: #FFF;
+	border-color: #CCC;
+	color: #999;
+	cursor: not-allowed;
+}
+
+/* 防止动画过程有闪烁 */
+.ui-MDialog-wrap a:link.ui-MDialog-close,
+.ui-MDialog-wrap a:visited.ui-MDialog-close,
+.ui-MDialog-wrap a:hover.ui-MDialog-close,
+.ui-MDialog-wrap a:active.ui-MDialog-close,
+.ui-MDialog-lock,
+.ui-MDialog-wrap {
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	    -ms-backface-visibility: hidden;
+	        backface-visibility: hidden;
+
+	-webkit-perspective: 1000;
+	   -moz-perspective: 1000;
+	    -ms-perspective: 1000;
+	        perspective: 1000;
+}
+
+.ui-MDialog-lock {
+	-webkit-animation:lock-fadeIn .4s;
+	        animation:lock-fadeIn .4s;  
+}
+
+@keyframes lock-fadeIn {
+	0% { opacity:0; }
+}
+
+@-webkit-keyframes lock-fadeIn {
+	0% { opacity:0; }
+}
+
+@keyframes transform-scale {
+	0%{opacity:0;transform:scale(0.2);-ms-transform:scale(0.2);}
+	60%{opacity:.75;transform:scale(1.1);-ms-transform:scale(1.1);}
+	100%{opacity:1;transform:scale(1);-ms-transform:scale(1);}
+}
+@-moz-keyframes transform-scale {
+	0%{opacity:0;-moz-transform:scale(0.2);}
+	60%{opacity:.75;-moz-transform:scale(1.1);}
+	100%{opacity:1;-moz-transform:scale(1);}
+}
+@-webkit-keyframes transform-scale {
+	0%{opacity:0;-webkit-transform:scale(0.2);}
+	60%{opacity:.75;-webkit-transform:scale(1.1);}
+	100%{opacity:1;-webkit-transform:scale(1);}
+}
+@-o-keyframes transform-scale {
+	0%{opacity:0;-o-transform:scale(0.2);}
+	60%{opacity:.75;-o-transform:scale(1.1);}
+	100%{opacity:1;-o-transform:scale(1);}
+}

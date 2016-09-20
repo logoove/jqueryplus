@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fixed</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    body{
+        height: 3000px;
+    }
+    .top{
+        height: 200px;
+        background-color: #ccc;
+    }
+    .box{
+        top: 0;
+        width: 100%;
+        left: 0;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        background: green;
+        position: fixed;
+        top: 0;
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        opacity: 0;
+    }
+    
+    #box{
+    }
+    
+    #box.bind-fix-out,
+    #box.bind-fix-in{
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        
+    }
+    #box.bind-fix-in{
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown
+    }
+    
+    #box.bind-fix-out{
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp
+    }
+
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+            transform: translateY(-50px)
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0)
+
+        }
+        100% {
+            opacity: 0;
+            -webkit-transform: translateY(-50px);
+            -ms-transform: translateY(-50px);
+            transform: translateY(-50px);
+        }
+    }
+
+</style>
+
+</head>
+<body>
+<div class="top"></div>
+<div id="reference">我是一个参照物</div>
+<div id="box" class="box" bind-fix='reference'>
+    home | news | about | link
+</div>
+<script src="../jquery.min.js"></script>
+<script src="bind.min.js"></script>
+</body>
+</html>

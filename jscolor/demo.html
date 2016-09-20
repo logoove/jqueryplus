@@ -1,19 +1,36 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>æœªå‘½åæ–‡ä»¶æ ‡é¢˜</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<script type="text/javascript" src="../jquery.min.js"></script>
-<link rel="stylesheet" href="../mod.css">
-<script type="text/javascript">
-	$(function(){
-		
-	});
-</script>
+	<title>ÑİÊ¾</title>
 </head>
 <body>
-<script src='jscolor.js'></script>
-<input type='text' class='color' value="66ff00"/>
+
+
+
+	<script src="jscolor.min.js"></script>
+
+
+
+	<h2>Example 1</h2>
+	ÑÕÉ«<input class="jscolor" value="ab2567">
+
+
+
+	<h2>Example 2</h2>
+
+	<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+		Ñ¡ÔñÑÕÉ«
+	</button>
+
+	HEX value: <input id="chosen-value" value="000000">
+
+	<script>
+	function setTextColor(picker) {
+		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+	}
+	</script>
+
+
+
 </body>
 </html>

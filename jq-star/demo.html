@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jQuery五星评分插件</title>
+
+<style type="text/css">
+.jquery-star-a{display:inline-block;width:24px;height:24px;cursor:pointer;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyNzcxQ0RFRUQ1NDAxMUU1OTc5RDg5N0MxNUY2NjNCRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyNzcxQ0RFRkQ1NDAxMUU1OTc5RDg5N0MxNUY2NjNCRCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI3NzFDREVDRDU0MDExRTU5NzlEODk3QzE1RjY2M0JEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjI3NzFDREVERDU0MDExRTU5NzlEODk3QzE1RjY2M0JEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+fTVZKAAAAetJREFUeNqkVMfKokEQrDGDCRVRxHBUEV/Aiz6Bb+rFF/DizaOYQA8GVBQTYg6zX82uYljD7j/QfKG7a3q6q0ZIKfFpbbdbabFYBL5Yuk8B4/FYns9nVCoV+WPA0+kkTSYTtOrgcDiwWq3kjwCn0ymsVqt693q9aLVa/18hq2F1Op0OPLJer4fT6US3231bpXgYiurXZrPB8XiE3W4H/fx3Wf1+H0ajET6fT21CjDvA3W4nZ7PZ73K1ai49MxgMT2CXxQ21ybPHOBwOWK/XCIVCsNlsQpRKJRmJROB2u++SXoGpKoRQ9mdwGI1GaDabyGQyEFqSLBaLCAaDCAQC18BPixvSBoMBer0eUqkUWyCuPSwUCjIcDitQHv0bMPaz0+kgnU4zR9xNmeU2Gg3Vn0/qoZ9xjL8Fe5ryfr+X9Xod0Wj0LSh9mnIQj8fJU/GSh9qEhca/r/o4mUwUG94SW9tZms3mfxrMW0ByimpgIIlN2vC5XC6v3zT6PR4P1fQEaHgkLAnNZIKzn+VyGX6/H8PhEMlkErFYDDwFNT6fz1UBL6XXbrclwaicWq2GbDbLhOv5F4uFzOfzahgul0upJZFIiL9yisbrKpfLyWq1Sk3LW9+t0c84yvbR93g5sEfyllfv7koq4/H/LwEGAM3mYdwMxNizAAAAAElFTkSuQmCC) center no-repeat}.jquery-star-a-hover{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMkJBOTgwNEQ1NDAxMUU1QkM2QTlFQjlDMUQ4NDQxQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMkJBOTgwNUQ1NDAxMUU1QkM2QTlFQjlDMUQ4NDQxQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUyQkE5ODAyRDU0MDExRTVCQzZBOUVCOUMxRDg0NDFDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUyQkE5ODAzRDU0MDExRTVCQzZBOUVCOUMxRDg0NDFDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jfhKcgAAAetJREFUeNqclM9LVFEUxz93HFIoBzETwnCIDCI3jbkRbBdJ0DLIVWArt636OwIXuYh2oRtdGG0UIxFc2KQIBpGCP9AGh3IYJ3EYx+O5vMb37nPmOXjhvHd/fO/3nvM9596YiHChHY5LPThjP5Fty/iATjFR0FgkUTkjlO2/Yhm5PFnmJRzjmx1fimx/VMhPu2R2bOdrNFczKQsnBciNwc5wbRc63kHLoLpyTRkajO/Z4ZKw2i2kVejvcVhuUS/ycHsWSpw3O2/XLc7i7T67X3mMpJNCcdM9ObUGTXfgvR56P+RVn0aSX4fPXZAMzDcmidOzYfhqXB2yExpyr4aq/a4QWe4L/PgG29q/GTxkw/iazYQIf1nB1R5W0SytllC7+3/82Ks/NwHzKc3gMnW3xAPoXzLVs3l8IHxKeP1Hc1oGi/B7Eo52NVVN0P5EbQAWnnqYZ+p6vPmMLO6cZBdKeOxrmv7UiIr8Cop/dO2qEl6BlTdeViv44HaHTE7kDLj+Ef5l4d5raNbM5lbh51tNypSLN7EaYR5lhfH2+jV7sacldMNUv06FzfNFilb5refeP7xWcOvTDfNgy7uDlTakWjW2+roU/wofrrv4tt5A2MEHrlwSGdHu9kz0Y2jXLc7iIx/HkKg1WxXcqQADAJekMz40rrF3AAAAAElFTkSuQmCC) center no-repeat}
+    button{width: 100px;height: 40px;line-height: 40px;}
+</style>
+</head>
+<body>
+    <div style="padding: 150px; text-align: center;">
+        <h1>jQuery五星评分插件</h1>
+        <div class="jquery-star1"></div>
+        <div class="jquery-star2"></div>
+        <div class="jquery-star3"></div>
+    </div>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.star.js"></script>
+    <script type="text/javascript">
+        $('.jquery-star1').star({
+            //number : 5, 默认5星
+            onSelect:function(index, offEvt){
+                console.log(this);
+                console.log(index);
+            }
+        });
+
+        $('.jquery-star2').star({
+            number : 10,
+            onSelect:function(index, offEvt){
+                console.log(this);
+                console.log(index);
+                offEvt(); //取消事件
+            }
+        });
+
+        $('.jquery-star3').star({
+            //number : 5, 默认5星
+            score : 1,
+            onSelect:function(index, offEvt){
+                console.log(this);
+                console.log(index);
+            }
+        });
+    </script>
+</body>
+</html>

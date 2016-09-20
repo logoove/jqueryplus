@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <style>
+  .box{padding: 20px;}
+    .time2 i{font-style:normal; display: inline-block; background: #333; color: #fff; padding: 0 3px; border-radius: 2px;}
+  }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <div 
+    bind-countdown="time1" 
+    data-now="1461117772" 
+    data-end="1461117775"  
+    data-timeout="活动结束了"
+    data-template="<%=d%>天<%=h%>时<%=m%>分<%=s%>秒后结束">
+  </div>
+</div>
+
+<div class="box">
+  <div class="time2"
+    bind-countdown="time2" 
+    data-now="1461117782" 
+    data-end="1461117795"  
+    data-timeout="活动结束了"
+    data-template="<i><%=hh%></i>:<i><%=mm%></i>:<i><%=ss%></i>">
+  </div>
+</div>
+
+<script src="../jquery.min.js"></script>
+<script src="bind.min.js"></script>
+<script>
+bind.countdown.time2 = {
+    timeout : function(my){
+        console.log(my);
+    }
+};
+
+bind.countdown.time1 = {
+    timeout : function(my){
+        console.log('time1执行完了');
+    }
+};
+</script>
+
+</body>
+</html>
