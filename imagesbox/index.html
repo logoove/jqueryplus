@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片查看弹出框</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<script src="../jquery.min.js"></script>
+<link rel="stylesheet" href="css/jquery.imagebox.css" />
+<script type="text/javascript" src="js/jquery.imagebox.js"></script>
+<script>
+$(function(){
+$('#id2').imagebox();
+
+$('#id1').imagebox({
+    linkTitle: '查看原图',
+    direction: 'vertical'
+});
+
+})
+
+</script>
+</head>
+
+<body ontouchstart>
+<a  id='id2' href="javascript:;"><img width="100" height="50" src="1.jpg"><img width="100" height="50" src="1.jpg"></a>
+<a  id='id1' href="javascript:;"><img width="100" height="50" src="1.jpg"><img width="100" height="50" src="1.jpg"></a>
+
+<a href="https://github.com/logoove/imagebox">github下载</a>
+ </body>
+</html>
