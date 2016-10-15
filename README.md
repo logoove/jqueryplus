@@ -15,3 +15,4 @@
 - validform 最好用的表单验证,使用非常容易
 - imagebox 图片弹出框,仿制ios效果
 - php.js 用js写成的php函数,非常适合开发使用
+- tpl js原生模板,只有一个函数tpl;
