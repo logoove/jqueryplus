@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>演示js</title>
+		<script src="jquery.min.js"></script>
+		<script src="tpl.js"></script>
+	</head>
+	<body>
+<div id="content"></div>
+<script id="test" type="text/html">
+    <% for (var i=0;i<list.length;i++) { %>
+        <div><%=i%>. <%=list[i]%>
+		</div>
+    <%}%>
+    <br>
+    <%=title%><br>
+    <% for(var j in list){%>
+    
+    <%=list[j]%>--
+    
+    <%}%>
+</script>
+<script>
+var data = {
+    title: '我是标题',
+    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+};
+var html = tpl($('#test').html(), data);
+
+$('#content').html(html);
+</script>	
+	</body>
+</html>
