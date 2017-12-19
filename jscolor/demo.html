@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>演示</title>
+	<title>婕旂ず</title><meta charset="utf-8">
 </head>
 <body>
 
@@ -12,21 +12,20 @@
 
 
 	<h2>Example 1</h2>
-	颜色<input class="jscolor" value="ab2567">
+	棰滆壊<input class="jscolor" value="fff">
 
 
 
 	<h2>Example 2</h2>
 
-	<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
-		选择颜色
-	</button>
-
-	HEX value: <input id="chosen-value" value="000000">
+	<button class="jscolor {valueElement:'cc', onFineChange:'fn(this)'}">
+		閫夋嫨棰滆壊
+	</button><input id="cc" value="#000">
 
 	<script>
-	function setTextColor(picker) {
-		document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+	function fn(picker) {
+		document.getElementById('cc').value = "#"+picker;
+		
 	}
 	</script>
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jqzoom实现商品详情页产品图片放大镜效果</title>
+    <script src="../jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.jqzoom.js" type="text/javascript"></script>
+    <style>
+.t_container {
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    zoom:1;
+}
+.jqzoom {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border:1px solid #ccc;
+    border-bottom: none;
+}
+.jqzoom img {
+    display: block;
+    border:none;
+    height: 100%;
+    width: 100%;
+}
+.b_container {
+    height: 60px;
+    width: 300px;
+    overflow: hidden;
+    zoom:1;
+}
+.b_container > img {
+    display: block;
+    border:1px solid #ccc;
+    border-left: none;
+    float: left;
+    width: 20%;
+    height: 60px;
+}
+.b_container > img:first-child {
+    border-left: 1px solid #ccc;
+}
+
+
+
+
+
+/* main style */
+div.zoomdiv {
+    z-index:    999;
+    position                : absolute;
+    top:0px;
+    left:0px;
+    width                   : 200px;
+    height                  : 200px;
+    background: #ffffff;
+    border:1px solid #CCCCCC;
+    display:none;
+    text-align: center;
+    overflow: hidden;
+}
+div.jqZoomPup {
+    z-index                 : 999;
+    visibility              : hidden;
+    position                : absolute;
+    top:0px;
+    left:0px;
+    width                   : 50px;
+    height                  : 50px;
+    border: 1px solid #aaa;
+    background: #ffffff url(../images/zoomlens.gif) 50% top  no-repeat;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    filter: alpha(Opacity=50);
+}
+    </style>
+    <script type="text/javascript">
+        /*使用jqzoom*/
+        $(function() {
+            //放大镜实现js
+            $(".jqzoom").jqueryzoom({
+                xzoom: 400, //放大图的宽度(默认是 200)
+                yzoom: 400, //放大图的高度(默认是 200)
+                offset: 10, //离原图的距离(默认是 10)
+                position: "right", //放大图的定位(默认是 "right")
+                preload: 1
+            });
+
+
+
+            //底部图片hover切换实现js
+            $('.b_container img').hover(function(){
+              $('.jqzoom img').attr('src',$(this).attr('src'));
+              $('.jqzoom img').attr('jqimg',$(this).attr('src'));
+            },function(){
+              $.noop();
+            });
+        });
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="t_container">
+      <div class="jqzoom">
+        <img src="image/small1.jpg" jqimg="image/big1.jpg"/>
+      </div>
+    </div>
+    <div class="b_container">
+      <img src="image/big1.jpg" />
+      <img src="image/big2.jpg" />
+      <img src="image/big3.jpg" />
+      <img src="image/big4.jpg" />
+      <img src="image/big5.jpg" />
+    </div>    
+  </div>
+</body>
+</html>

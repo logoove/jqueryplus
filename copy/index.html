@@ -4,22 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>无需Flash无需依赖任何JS库实现文本复制与剪切</title>
-
+<script src="../jquery.min.js"></script>
 <script src="clipboard.min.js"></script>
-<style>
-.demo{width:360px;margin:50px auto 10px auto}
-.btn {
-	text-transform: uppercase;
-	background: rgb(0, 100, 0); color: white;
-	padding: 10px; border-radius: 5px;
-	cursor: pointer;margin:10px auto;width:100px;text-align:center;
-}
-.btn:hover {background: rgb(0, 75, 0);}
-input,textarea{padding:10px; border:1px solid #d3d3d3;width:220px}
-textarea{height:80px}
-
-
-</style>
 
 </head>
 
@@ -28,22 +14,23 @@ textarea{height:80px}
 <div id="main">
 
 	<div class="demo">
-		<input id="foo" value="">
 
-		<button id='q1'>复制</button>
+		<a class='jsclip' href="javascript:;" data-url="http://www.baidu.com">复制</a>
 		
 	</div>
 
 </div>
 
 <script>
-document.getElementById("q1").addEventListener("click", function() {
-  clipboard.copy("我是内容").then(function(){
-    alert("复制成功");
-  }, function(err){
-    
-  });
-});
+   var clipboard = new Clipboard('.jsclip', {
+   text: function(e) {
+    return $(e).data('url')||$(e).data('href');
+    }
+   });
+   clipboard.on('success', function(e) {
+   alert('复制成功');
+   
+   });
 </script>
 
 

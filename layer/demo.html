@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>开始使用layer</title>
+</head>
+<body>
+<style>
+.layui-btn{display: inline-block; vertical-align: middle; height: 38px; line-height: 38px; padding: 0 18px; background-color: #009688; color: #fff; white-space: nowrap; text-align: center; font-size: 14px; border: none; border-radius: 2px; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+.layui-btn:hover{opacity: 0.8; filter:alpha(opacity=80); color: #fff;}
+.layui-btn:active{opacity: 1; filter:alpha(opacity=100);}
+
+.layer_notice{float:left; height:75px; width:330px;  overflow:hidden;padding:10px;display:none}
+</style>
+  
+  
+  <script src="../jquery.min.js"></script> 
+  <script src="layer.js"></script>
+  <button id="test1" class="layui-btn">msg</button>
+  <button id="test2" class="layui-btn">open</button>
+  <button id="test3" class="layui-btn">iframe</button>
+  <button id="test4" class="layui-btn">load</button>
+  <button id="test5" class="layui-btn">tips</button>
+  <button id="test6" class="layui-btn">alert</button>
+   <button id="test7" class="layui-btn">confirm</button>
+   <button id="test8" class="layui-btn">open不显示标题</button>
+   <button id="test9" class="layui-btn">prompt</button>
+   
+   <div id="demo" class="layer-photos-demo">
+  <img layer-src="big1.jpg" src="small1.jpg" alt="我是描述1">
+  <img  layer-src="big2.jpg" src="small2.jpg" alt="我是描述2">
+</div>
+  <script>
+var p= {
+  "title": "", //相册标题
+  "id": 123, //相册id
+  "start": 0, //初始显示的图片序号，默认0
+  "data": [   //相册包含的图片，数组格式
+    {
+      "alt": "图片名",
+      "pid": 666, //图片id
+      "src": "", //原图地址
+      "thumb": "" //缩略图地址
+    }
+  ]
+}//也支持json相册
+  layer.photos({
+  photos: '#demo'
+  ,anim:0 //0-6的选择，指定弹出图片动画类型，默认随机
+}); 
+
+    $('#test8').on('click', function(){
+      layer.open({
+  type: 1,
+  shade: false,
+  title: false, //不显示标题
+  content: $('.layer_notice'), 
+  cancel: function(){
+    layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+  }
+});
+  });
+  $('#test9').on('click', function(){
+   layer.prompt({title: '文本框', formType:2}, function(pass, index){//0,文本1,是密码2是文本域
+   alert(pass);
+   layer.close(index);
+   });
+  });
+  //弹出一个提示层
+  $('#test1').on('click', function(){
+    layer.msg('我是你的老大');
+  });
+   $('#test6').on('click', function(){
+    layer.alert('我是你的老大');//1-7
+    layer.alert('我是你的老0',{icon:0,title:"标题"});
+  });
+
+  $('#test7').on('click', function(){
+layer.confirm('是否删除', {
+  btn: ['是','否']
+}, function(){
+  layer.msg('是的删除', {icon: 1});
+}, function(){
+  layer.msg('否', {
+    time: 20000, //20s后自动关闭
+    btn: ['确定']
+  });
+});
+  });
+  
+  //弹出一个页面层
+  $('#test2').on('click', function(){
+    layer.open({
+      type: 1,
+      area: ['600px', '360px'],
+      shadeClose: true, //点击遮罩关闭
+      content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+    });
+  });
+  
+
+
+  
+  //弹出一个iframe层
+  $('#test3').on('click', function(){
+    layer.open({
+      type: 2,
+      title: 'iframe父子操作',
+      maxmin: true,
+      shadeClose: true, //点击遮罩关闭层
+      area : ['800px' , '520px'],
+      content: 'http://www.baidu.com'
+    });
+  });
+  
+
+
+  
+  //弹出一个loading层
+  $('#test4').on('click', function(){
+    var ii = layer.load(0,{shade:[0.5,'#fff']});//0,1,2样式
+    //此处用setTimeout演示ajax的回调
+    setTimeout(function(){
+      layer.close(ii);
+    }, 1000);
+  });
+  
+
+
+  
+  //弹出一个tips层
+  $('#test5').on('click', function(){
+    layer.tips('Hello tips!','#test5');
+  });
+  
+
+
+  </script>
+
+ <div class="layer_notice"> 演示</div>
+
+</body>
+</html>
