@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery间歇滚动插件BreakingNews演示_dowebok</title>
+<link rel="stylesheet" href="css/BreakingNews.css">
+<style>
+body { background-color: #38545d;}
+.demo { width: 700px; margin: 0 auto;}
+.demo1 { margin-top: 100px;}
+.demo2, .demo3 { margin-top: 50px;}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/BreakingNews.js"></script>
+<script>
+$(function(){
+	$('#breakingnews1').BreakingNews({
+		title: '公告'
+	});
+
+	$('#breakingnews2').BreakingNews({
+		title: '滚动新闻',
+		titlebgcolor: '#099',
+		linkhovercolor: '#099',
+		border: '1px solid #099',
+		timer: 4000,
+		effect: 'slide'	
+	});
+
+	$('#breakingnews3').BreakingNews({
+		title: '一月点击排行',
+		titlebgcolor: '#cf0c36',
+		linkhovercolor: '#099',
+		border: '1px solid #93221a',
+		timer: 5000,
+		effect: 'slide'
+	});
+});
+</script>
+</head>
+
+<body>
+<h1>jQuery间歇滚动插件BreakingNews演示</h1>
+
+<!-- Demo start  -->
+<div class="demo demo1">
+	<div class="BreakingNewsController easing" id="breakingnews1">
+		<div class="bn-title"></div>
+		<ul>
+			<li><a href="http://www.dowebok.com/115.html">jqueryrotate制作百度红包大放送抽奖效果</a></li>
+			<li><a href="http://www.dowebok.com/77.html">jQuery全屏滚动插件fullPage.js</a></li>
+			<li><a href="http://www.dowebok.com/97.html">fullPage.js制作网易邮箱6.0介绍页面</a></li>
+			<li><a href="http://www.dowebok.com/120.html">onepage-scroll制作iPhone 5s页面</a></li>
+			<li><a href="http://www.dowebok.com/93.html">强大实用的jQuery幻灯片插件Owl Carousel</a></li>
+			<li><a href="http://www.dowebok.com/113.html">slick制作17173 ChainJoy2014幻灯片</a></li>
+		</ul>
+		<div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>	
+	</div>
+</div>
+
+<div class="demo demo2">
+	<div class="BreakingNewsController easing" id="breakingnews2">
+		<div class="bn-title"></div>
+		<ul id="abc">
+			<li><a href="http://www.dowebok.com/42.html">1. jQuery时间轴/时光轴插件jqtimeline</a></li>
+			<li><a href="http://www.dowebok.com/118.html">2. onepage-scroll – jQuery单页/全屏滚动插件</a></li>
+			<li><a href="http://www.dowebok.com/48.html">3. jQuery响应式图片画廊插件S Gallery</a></li>
+			<li><a href="http://www.dowebok.com/92.html">4. iOS 7标签栏图标Tab Bar Icons iOS 7</a></li>
+			<li><a href="http://www.dowebok.com/82.html">5. jQuery Lightbox效果插件Boxer</a></li>
+			<li><a href="http://www.dowebok.com/106.html">6. Select-or-Die – jQuery下拉框美化插件</a></li>
+			<li><a href="http://www.dowebok.com/103.html">7. 制作网易2014世界杯史话/世界杯时间轴效果</a></li>
+		</ul>
+		<div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>	
+	</div>
+</div>
+
+<div class="demo demo3">
+	<div class="BreakingNewsController easing" id="breakingnews3">
+		<div class="bn-title"></div>
+		<ul>
+			<li><a href="http://www.dowebok.com/115.html">jqueryrotate制作百度红包大放送抽奖效果</a></li>
+			<li><a href="http://www.dowebok.com/77.html">jQuery全屏滚动插件fullPage.js</a></li>
+			<li><a href="http://www.dowebok.com/97.html">fullPage.js制作网易邮箱6.0介绍页面</a></li>
+			<li><a href="http://www.dowebok.com/120.html">onepage-scroll制作iPhone 5s页面</a></li>
+			<li><a href="http://www.dowebok.com/93.html">强大实用的jQuery幻灯片插件Owl Carousel</a></li>
+			<li><a href="http://www.dowebok.com/113.html">slick制作17173 ChainJoy2014幻灯片</a></li>
+		</ul>
+		<div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>	
+	</div>
+</div>
+<!-- Demo end -->
+
+<p class="vad">
+	<a href="http://www.dowebok.com/" target="_blank">dowebok.com</a>
+	<a href="http://www.dowebok.com/121.html" target="_blank">说 明</a>
+	<a href="http://www.dowebok.com/121.html" target="_blank">下 载</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+<!-- 以下是统计及其他信息，与演示无关，不必理会 -->
+<style>
+* { margin: 0; padding: 0;}
+body { font-family: Consolas,arial,"宋体";}
+h1 { width: 900px; margin: 40px auto; font: 32px "Microsoft Yahei"; text-align: center;}
+.explain, .dowebok-explain { margin-top: 20px; font-size: 14px; text-align: center; color: #f50;}
+
+.vad { margin: 50px 0 5px; font-family: Consolas,arial,宋体; text-align:center;}
+.vad a { display: inline-block; height: 36px; line-height: 36px; margin: 0 5px; padding: 0 50px; font-size: 14px; text-align:center; color:#eee; text-decoration: none; background-color: #222;}
+.vad a:hover { color: #fff; background-color: #000;}
+.thead { width: 728px; height: 90px; margin: 0 auto; border-bottom: 40px solid transparent;}
+
+.code { position: relative; margin-top: 100px; padding-top: 41px;}
+.code h3 { position: absolute; top: 0; z-index: 10; width: 100px; height: 40px; font: 16px/40px "Microsoft Yahei"; text-align: center; cursor: pointer;}
+.code .cur { border: 1px solid #f0f0f0; border-bottom: 1px solid #f8f8f8; background-color: #f8f8f8;}
+.code .h31 { left: 0;}
+.code .h32 { left: 102px;}
+.code .h33 { left: 204px;}
+.code .h34 { left: 306px;}
+.code { width: 900px; margin-left: auto; margin-right: auto;}
+pre { padding: 15px 0; border: 1px solid #f0f0f0; background-color: #f8f8f8;}
+.f-dn { display: none;}
+</style>
+<style>
+h1 { color: #fff;}
+.vad { margin-top: 100px;}
+</style>
+</body>
+</html>
