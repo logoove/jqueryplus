@@ -9,6 +9,7 @@
 - php.js 用js写成的php函数,非常适合php开发使用,新增js模板函数tpl;
 - layer 弹出层,功能超过,包括相册看图
 - layui,类似bootstrap,包括了layer所有功能,更加强大
+- jquery-form ajax 表单提交
 -swiper.js 轮播图3.4.2终极3版本<http://3.swiper.com.cn/api/index.html>
 - slick 幻灯片插件 <http://www.dowebok.com/84.html>
 - wow 页面滚动动画效果依赖animate.min.css,调用方法`new WOW().init();` 在div上加`class="wow slideInLeft"`
